@@ -1,7 +1,0 @@
-USERNAME: DAYS:HOURS:MINUTES 
-
-test: 87:5:50
-test_Player3: 87:5:20
-Player: 86:3:10
-Testing_player2: 31:22:40
-testing_Player1: 0:6:40

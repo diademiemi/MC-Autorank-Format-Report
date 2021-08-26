@@ -1,0 +1,7 @@
+# USERNAME: DAYS:HOURS:MINUTES 
+
+test: 8:17:23
+test_player3: 8:17:20
+player: 8:14:43
+testing_player2: 3:4:40
+testing_player1: 0:0:40

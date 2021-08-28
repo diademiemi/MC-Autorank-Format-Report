@@ -101,7 +101,7 @@ else:
     # If it is a saturday, run the function with the "Weekly" prefix
     if verbose == "true":
         print("Creating a Weekly report")
-    if datetime.today().date().weekday == 5:
+    if datetime.today().date().weekday() == 5:
         formatbackup("Weekly")
 
     # Check if it is the last day of the month

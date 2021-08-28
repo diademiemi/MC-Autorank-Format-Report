@@ -46,6 +46,9 @@ def formatbackup(file_prefix):
     # Create a list which will contain other lists with data of players
     datalist = []
 
+    if verbose == "true":
+        print("Found file {0}/{1}".format(backup_location, filelist[0]))
+
     # Reads the backup file one line at a time, fetching the UUID and using it to read the associated 
     # Essentials userdata YML file. From this it reads the username of the account which it appends to 
     # a temporary list with the total minutes, username and human readable playtime. 

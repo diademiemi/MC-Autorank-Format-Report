@@ -1,0 +1,22 @@
+last-account-name: Player
+timestamps:
+  login: 1614112346591
+  logout: 1614112431653
+  lastteleport: 1614110978465
+ipAddress: 192.168.2.1
+logoutlocation:
+  world: world
+  x: -150.9519265652989
+  y: 67.0
+  z: 18.91926529957462
+  yaw: -4.582071
+  pitch: 11.646701
+lastlocation:
+  world: world
+  x: -150.9519265652989
+  y: 67.0
+  z: 18.91926529957462
+  yaw: -4.582071
+  pitch: 11.646701
+afk: false
+money: '1000.0'

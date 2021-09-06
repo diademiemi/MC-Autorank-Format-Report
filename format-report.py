@@ -13,7 +13,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
-usermap_location = os.getenv('USERMAP_LOCATION')
+userdata_location = os.getenv('USERDATA_LOCATION')
 backup_location = os.getenv('BACKUPS_LOCATION')
 output_location = os.getenv('REPORTS_OUTPUT_LOCATION')
 verbose = os.getenv('VERBOSE')
@@ -53,18 +53,13 @@ def formatbackup(file_prefix):
     # Essentials userdata YML file. From this it reads the username of the account which it appends to 
     # a temporary list with the total minutes, username and human readable playtime. 
     # This list is then added to a larger list of lists which is sorted and written into a file.
-    with open(os.path.join(backup_location, filelist[0])) as backup, open (os.path.join(usermap_location), newline='') as usermap:
-        reader = csv.reader(usermap, delimiter=',')
-        for count, line in enumerate(backup):
+    with open(os.path.join(backup_location, filelist[0])) as backup:
+        for count, line in enumerate(backup): 
             uuid = re.findall('^[^:]+', line)[0]
             totalminutes = int(re.findall('(?<=: ).*', line)[0])
-
-            for row in reader:
-                if uuid == row[1]:
-                    lastaccountname = row[0]
-                    usermap.seek(0)
-                    break;
-
+            with open("{0}.yml".format(os.path.join(userdata_location, uuid))) as playerfile:
+                playerfilestr = playerfile.read()
+                lastaccountname = re.findall('(?<=last-account-name: ).*', playerfilestr)[0]
             playtime = timeformat(totalminutes)
             tmplist = []
             tmplist.extend([totalminutes, lastaccountname, playtime])
